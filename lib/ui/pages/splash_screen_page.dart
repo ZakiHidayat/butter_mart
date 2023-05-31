@@ -1,4 +1,3 @@
-import 'package:butter_mart/ui/pages/onBoarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
@@ -37,7 +36,7 @@ class _SplashScreenPageState extends State<SplashScreenPage>
         controller: _controller,
         onLoaded: (compos) {
           _controller
-          ..duration = Duration(seconds: 2)
+          ..duration = const Duration(seconds: 2)
           ..forward().then((value){
             Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>widget.home,), (_) => false);
           });

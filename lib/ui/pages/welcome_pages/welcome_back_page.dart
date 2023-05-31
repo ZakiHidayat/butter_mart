@@ -3,12 +3,9 @@ import 'dart:math';
 import 'package:butter_mart/locals/secure_storage.dart';
 import 'package:butter_mart/models/user.dart';
 import 'package:butter_mart/ui/pages/bottom_nav.dart';
-import 'package:butter_mart/ui/pages/home_page.dart';
 import 'package:confetti/confetti.dart';
 import 'package:flutter/material.dart';
 import 'package:butter_mart/theme/app_theme.dart';
-
-import '../../../theme/app_theme.dart';
 
 class WelcomeBackPage extends StatefulWidget {
   const WelcomeBackPage({Key? key}) : super(key: key);
@@ -78,14 +75,14 @@ class _WelcomeBackPage extends State<WelcomeBackPage> {
           style: ElevatedButton.styleFrom(
               shadowColor: Colors.transparent,
               backgroundColor: primaryColor,
-              minimumSize: Size(double.infinity, 60),
+              minimumSize: const Size(double.infinity, 60),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(defaultRadius))),
           onPressed: () {
             Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (_) => BottomNav(),
+                  builder: (_) => const BottomNav(),
                 ),
                     (_) => false);
           },

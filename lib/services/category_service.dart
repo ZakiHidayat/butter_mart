@@ -1,5 +1,4 @@
 import 'package:butter_mart/models/category.dart';
-import 'package:dio/dio.dart';
 
 import '../config/api_config.dart';
 import 'auth_service.dart';

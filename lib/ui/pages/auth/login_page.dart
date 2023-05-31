@@ -2,9 +2,7 @@ import 'package:butter_mart/services/auth_service.dart';
 import 'package:butter_mart/ui/pages/onBoarding_page.dart';
 import 'package:butter_mart/ui/pages/welcome_pages/welcome_back_page.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gaimon/gaimon.dart';
 
@@ -34,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
           style: ElevatedButton.styleFrom(
               shadowColor: Colors.transparent,
               backgroundColor: primaryColor,
-              minimumSize: Size(double.infinity, 60),
+              minimumSize: const Size(double.infinity, 60),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(defaultRadius))),
           onPressed: () async {
@@ -54,7 +52,7 @@ class _LoginPageState extends State<LoginPage> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => WelcomeBackPage(),
+                        builder: (_) => const WelcomeBackPage(),
                       ),
                       (_) => false);
                 } else {
@@ -119,10 +117,10 @@ class _LoginPageState extends State<LoginPage> {
                 context,
                 PageRouteBuilder(
                   pageBuilder: (context, animation, secondaryAnimation) =>
-                      OnBoardingPage(),
+                      const OnBoardingPage(),
                   transitionsBuilder:
                       (context, animation, secondaryAnimation, child) {
-                    var begin = Offset(-1.0, 0.0);
+                    var begin = const Offset(-1.0, 0.0);
                     var end = Offset.zero;
                     var tween = Tween(begin: begin, end: end);
 
@@ -162,7 +160,7 @@ class _LoginPageState extends State<LoginPage> {
                               fontSize: 35,
                               fontWeight: FontWeight.w800,
                             )),
-                        SizedBox(height: 26),
+                        const SizedBox(height: 26),
                         //Email
                         TextFormField(
                           cursorColor: primaryColor,
@@ -186,21 +184,21 @@ class _LoginPageState extends State<LoginPage> {
                             errorBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.circular(defaultRadius),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.red,
                               ),
                             ),
                             focusedErrorBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.circular(defaultRadius),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: Colors.red,
                               ),
                             ),
                             focusedBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.circular(defaultRadius),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: primaryColor,
                                 width: 2.0,
                               ),
@@ -208,16 +206,16 @@ class _LoginPageState extends State<LoginPage> {
                             enabledBorder: OutlineInputBorder(
                               borderRadius:
                                   BorderRadius.circular(defaultRadius),
-                              borderSide: BorderSide(
+                              borderSide: const BorderSide(
                                 color: greyColor,
                                 width: 2.0,
                               ),
                             ),
                             contentPadding:
-                                EdgeInsets.only(left: 23, top: 20, bottom: 20),
+                                const EdgeInsets.only(left: 23, top: 20, bottom: 20),
                           ),
                         ),
-                        SizedBox(height: 26),
+                        const SizedBox(height: 26),
                         TextFormField(
                           controller: _passwordC,
                           obscureText: _obscureText,
@@ -239,7 +237,7 @@ class _LoginPageState extends State<LoginPage> {
                                   });
                                 },
                                 child: Container(
-                                  margin: EdgeInsets.only(right: 10),
+                                  margin: const EdgeInsets.only(right: 10),
                                   child: Icon(
                                       _obscureText
                                           ? Icons.visibility_rounded
@@ -256,21 +254,21 @@ class _LoginPageState extends State<LoginPage> {
                               errorBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(defaultRadius),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.red,
                                 ),
                               ),
                               focusedErrorBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(defaultRadius),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: Colors.red,
                                 ),
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(defaultRadius),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: primaryColor,
                                   width: 2.0,
                                 ),
@@ -278,12 +276,12 @@ class _LoginPageState extends State<LoginPage> {
                               enabledBorder: OutlineInputBorder(
                                 borderRadius:
                                     BorderRadius.circular(defaultRadius),
-                                borderSide: BorderSide(
+                                borderSide: const BorderSide(
                                   color: greyColor,
                                   width: 2.0,
                                 ),
                               ),
-                              contentPadding: EdgeInsets.symmetric(
+                              contentPadding: const EdgeInsets.symmetric(
                                   horizontal: 23, vertical: 20)),
                         ),
                       ],

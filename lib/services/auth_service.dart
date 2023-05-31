@@ -90,8 +90,9 @@ class AuthService {
     try {
       const url = '${ApiConfig.baseUrl}/${ApiConfig.logoutEndpoint}';
       final token = await SecureStorage.getToken();
+      log('$token');
       final headers = {HttpHeaders.authorizationHeader: 'Bearer $token'};
-      final response = await dio.get(url, options: Options(headers: headers));
+      final response = await dio.post(url, options: Options(headers: headers));
       if (response.statusCode == 200) {
         final responseJson = response.data;
         final status = responseJson['status'];

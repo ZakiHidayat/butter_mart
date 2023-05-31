@@ -1,5 +1,6 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:butter_mart/services/auth_service.dart';
-import 'package:butter_mart/ui/pages/home_page.dart';
 import 'package:butter_mart/ui/pages/onBoarding_page.dart';
 import 'package:butter_mart/ui/pages/welcome_pages/welcome_page.dart';
 import 'package:dio/dio.dart';
@@ -38,7 +39,7 @@ class _RegisterPageState extends State<RegisterPage> {
           style: ElevatedButton.styleFrom(
               shadowColor: Colors.transparent,
               backgroundColor: primaryColor,
-              minimumSize: Size(double.infinity, 60),
+              minimumSize: const Size(double.infinity, 60),
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(defaultRadius))),
           onPressed: () async {
@@ -64,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (_) => WelcomePage(),
+                        builder: (_) => const WelcomePage(),
                       ),
                           (_) => false);
                 } else {
@@ -119,10 +120,10 @@ class _RegisterPageState extends State<RegisterPage> {
                   context,
                   PageRouteBuilder(
                     pageBuilder: (context, animation, secondaryAnimation) =>
-                        OnBoardingPage(),
+                        const OnBoardingPage(),
                     transitionsBuilder:
                         (context, animation, secondaryAnimation, child) {
-                      var begin = Offset(-1.0, 0.0);
+                      var begin = const Offset(-1.0, 0.0);
                       var end = Offset.zero;
                       var tween = Tween(begin: begin, end: end);
 
@@ -161,13 +162,14 @@ class _RegisterPageState extends State<RegisterPage> {
                             fontWeight: FontWeight.w800,
                           )),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //Nama
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       textCapitalization: TextCapitalization.words,
                       cursorColor: primaryColor,
                       controller: _namaC,
+                      maxLength: 30,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -184,34 +186,34 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //Email
                     TextFormField(
                       textInputAction: TextInputAction.next,
@@ -234,34 +236,34 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //No Telp
                     TextFormField(
                       textInputAction: TextInputAction.next,
@@ -284,39 +286,40 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //Alamat
                     TextFormField(
                       textInputAction: TextInputAction.next,
                       cursorColor: primaryColor,
                       controller: _alamatC,
+                      maxLength: 150,
                       autovalidateMode: AutovalidateMode.onUserInteraction,
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -333,34 +336,34 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //Password
                     TextFormField(
                       textInputAction: TextInputAction.next,
@@ -384,7 +387,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               });
                             },
                             child: Container(
-                              margin: EdgeInsets.only(right: 10),
+                              margin: const EdgeInsets.only(right: 10),
                               child: Icon(
                                   _obscurePass
                                       ? Icons.visibility_rounded
@@ -400,34 +403,34 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
-                    SizedBox(height: 26),
+                    const SizedBox(height: 26),
                     //Confirm Password
                     TextFormField(
                       cursorColor: primaryColor,
@@ -450,7 +453,7 @@ class _RegisterPageState extends State<RegisterPage> {
                               });
                             },
                             child: Container(
-                              margin: EdgeInsets.only(right: 10),
+                              margin: const EdgeInsets.only(right: 10),
                               child: Icon(
                                   _obscureConfirmPass
                                       ? Icons.visibility_rounded
@@ -466,32 +469,32 @@ class _RegisterPageState extends State<RegisterPage> {
                               fontSize: 18, fontWeight: FontWeight.w500),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                             ),
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: primaryColor,
                               width: 2.0,
                             ),
                           ),
                           enabledBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(defaultRadius),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: greyColor,
                               width: 2.0,
                             ),
                           ),
                           contentPadding:
-                              EdgeInsets.only(left: 23, top: 20, bottom: 20)),
+                              const EdgeInsets.only(left: 23, top: 20, bottom: 20)),
                     ),
                   ],
                 ),

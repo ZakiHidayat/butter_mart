@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:butter_mart/models/category.dart';
 import 'package:butter_mart/models/product.dart';
 import 'package:dio/dio.dart';
 
@@ -11,11 +10,14 @@ class ProductService {
   // ! Dibikin singleton biar mastiin yg dibikin program hanya 1 object yg dibuat dari class ini
   ProductService._();
 
-  static Future<List<Product>> getProduct() async {
+  static Future<List<Product>> getProduct({String? categoryId = '0'}) async {
     const url = '${ApiConfig.baseUrl}/${ApiConfig.productEndpoint}';
     try {
       final response = await dio.get(
         url,
+        queryParameters: {
+          'category_id': categoryId,
+        },
       );
       final responseJson = response.data;
       final status = responseJson['status'];
